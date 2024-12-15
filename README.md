@@ -8,6 +8,10 @@ Features
 • Routing with MaterialApp.router for clean and declarative navigation.
 • Clean and modular structure with components like ThemeNotifier.
 
+Environment Setup
+
+To run this project, you need to create an .env file in the root directory of the Flutter application. The .env file should include all the necessary environment variables for API keys and other configurations.
+
 Technologies Used
 
 Core Frameworks and Tools
