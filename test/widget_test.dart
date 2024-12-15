@@ -1,30 +1,47 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:blott_news/main.dart';
+import 'package:blott_news/app.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  group('App Widget Tests', () {
+    testWidgets('App launches with MaterialApp.router',
+        (WidgetTester tester) async {
+      // Build the app and trigger a frame
+      await tester.pumpWidget(
+        const ProviderScope(
+          child: App(),
+        ),
+      );
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+      // Verify that the app contains MaterialApp.router
+      expect(find.byType(MaterialApp), findsOneWidget);
+    });
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    testWidgets('Scaffold is present in the app', (WidgetTester tester) async {
+      // Build the app and trigger a frame
+      await tester.pumpWidget(
+        const ProviderScope(
+          child: App(),
+        ),
+      );
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+      // Verify that a Scaffold widget exists
+      expect(find.byType(Scaffold), findsOneWidget);
+    });
+
+    testWidgets('App title is correctly set', (WidgetTester tester) async {
+      // Build the app and trigger a frame
+      await tester.pumpWidget(
+        const ProviderScope(
+          child: App(),
+        ),
+      );
+
+      // Check if the app title is correctly set (optional check)
+      final materialApp = tester.widget<MaterialApp>(find.byType(MaterialApp));
+      expect(materialApp.title, equals('Blott News'));
+    });
   });
 }

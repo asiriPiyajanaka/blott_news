@@ -1,16 +1,32 @@
 # blott_news
 
-A new Flutter project.
+A Flutter project designed for dynamic news delivery and customization.
 
-## Getting Started
+Features
+• Light and Dark Theme Support using Riverpod for state management.
+• Theme persistence using SharedPreferences.
+• Routing with MaterialApp.router for clean and declarative navigation.
+• Clean and modular structure with components like ThemeNotifier.
 
-This project is a starting point for a Flutter application.
+Technologies Used
 
-A few resources to get you started if this is your first Flutter project:
+Core Frameworks and Tools
+• Flutter: The main framework for building cross-platform applications.
+• Dart: The programming language used with Flutter.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+State Management
+• Riverpod: For efficient and reactive state management.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Storage
+• SharedPreferences: To persist user preferences such as theme mode.
+
+Routing
+• MaterialApp.router: For declarative and efficient navigation.
+
+Testing
+• flutter_test: For writing widget tests.
+• ProviderScope in Tests: Ensuring compatibility with Riverpod during testing.
+
+Theming
+• Dynamic Theming: Light and dark themes with ThemeMode switching.
+• Custom MaterialColor: Created from base colors to comply with primarySwatch.
