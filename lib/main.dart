@@ -10,14 +10,17 @@ Future<void> main() async {
   final prefsManager = SharedPreferencesManager();
   await prefsManager.init();
   await dotenv.load(fileName: ".env");
-  await Firebase.initializeApp(
+  if (Firebase.apps.isEmpty) {
+    await Firebase.initializeApp(
       options: FirebaseOptions(
-    apiKey: dotenv.env['API_KEY']!,
-    appId: dotenv.env['APP_ID']!,
-    messagingSenderId: dotenv.env['MESSAGING_SENDER_ID']!,
-    projectId: dotenv.env['PROJECT_ID']!,
-    storageBucket: dotenv.env['STORAGE_BUCKET']!,
-  ));
+        apiKey: dotenv.env['API_KEY']!,
+        appId: dotenv.env['APP_ID']!,
+        messagingSenderId: dotenv.env['MESSAGING_SENDER_ID']!,
+        projectId: dotenv.env['PROJECT_ID']!,
+        storageBucket: dotenv.env['STORAGE_BUCKET']!,
+      ),
+    );
+  }
 
   runApp(
     const ProviderScope(
