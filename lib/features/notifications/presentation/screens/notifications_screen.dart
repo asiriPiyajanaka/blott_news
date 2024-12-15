@@ -1,9 +1,12 @@
+import 'package:blott_news/core/presentation/widgets/button.dart';
+import 'package:blott_news/core/themes/app_colors.dart';
 import 'package:blott_news/features/notifications/data/repositories/notification_repository_impl.dart';
 import 'package:blott_news/features/notifications/data/sources/firebase_notification_service.dart';
 import 'package:blott_news/features/notifications/domain/usecases/manage_notifications_usecase.dart';
 import 'package:blott_news/features/notifications/presentation/controllers/notification_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_svg/svg.dart';
 
 class NotificationsScreen extends ConsumerStatefulWidget {
   const NotificationsScreen({super.key});
@@ -42,47 +45,33 @@ class _NotificationsScreenState extends ConsumerState<NotificationsScreen> {
                 Stack(
                   alignment: Alignment.topRight,
                   children: [
-                    Icon(
-                      Icons.chat_bubble,
-                      size: 80.0,
-                      color: Colors.grey.shade400,
-                    ),
-                    Positioned(
-                      top: 0,
-                      right: 0,
-                      child: Container(
-                        height: 20,
-                        width: 20,
-                        decoration: BoxDecoration(
-                          color: Colors.purple,
-                          shape: BoxShape.circle,
-                        ),
-                        child: const Icon(
-                          Icons.check,
-                          size: 12,
-                          color: Colors.white,
-                        ),
-                      ),
+                    SvgPicture.asset(
+                      "assets/graphics/message_notif.svg",
+                      width: 100,
+                      height: 100,
                     ),
                   ],
                 ),
-                const SizedBox(height: 16.0),
+                const SizedBox(height: 26.0),
                 const Text(
                   "Get the most out of Blott ✅",
                   style: TextStyle(
-                    fontSize: 20.0,
+                    fontSize: 24.0,
                     fontWeight: FontWeight.bold,
                   ),
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 8.0),
-                const Text(
-                  "Allow notifications to stay in the loop with your payments, requests and groups.",
-                  style: TextStyle(
-                    fontSize: 16.0,
-                    color: Colors.grey,
+                const SizedBox(height: 16.0),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 40.0),
+                  child: const Text(
+                    "Allow notifications to stay in the loop with your payments, requests and groups.",
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      color: Colors.grey,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
-                  textAlign: TextAlign.center,
                 ),
               ],
             ),
@@ -91,19 +80,10 @@ class _NotificationsScreenState extends ConsumerState<NotificationsScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 24.0),
               child: SizedBox(
                 width: double.infinity,
-                child: ElevatedButton(
+                child: CustomButton(
                   onPressed: () => _controller.initializeNotifications(),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.purple,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(32.0),
-                    ),
-                    padding: const EdgeInsets.symmetric(vertical: 16.0),
-                  ),
-                  child: const Text(
-                    "Continue",
-                    style: TextStyle(fontSize: 16.0, color: Colors.white),
-                  ),
+                  text: "Continue",
+                  backgroundColor: AppColors.primary,
                 ),
               ),
             ),
