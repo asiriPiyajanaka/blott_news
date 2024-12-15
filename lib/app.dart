@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'router/router.dart';
-import 'core/themes/light_theme.dart';
-import 'core/themes/dark_theme.dart';
-import 'core/themes/theme_notifier.dart';
+import 'core/presentation/themes/light_theme.dart';
+import 'core/presentation/themes/dark_theme.dart';
+import 'core/presentation/themes/theme_notifier.dart';
 
 class App extends ConsumerStatefulWidget {
   const App({super.key});

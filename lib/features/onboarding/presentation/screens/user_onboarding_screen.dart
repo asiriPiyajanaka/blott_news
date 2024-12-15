@@ -1,10 +1,10 @@
-import 'package:blott_news/core/themes/app_colors.dart';
-import 'package:blott_news/core/themes/theme_notifier.dart';
-import 'package:blott_news/features/onboarding/presentation/controllers/user_onboarding_controller.dart';
-import 'package:blott_news/features/onboarding/presentation/widgets/header_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:blott_news/core/presentation/themes/app_colors.dart';
+import 'package:blott_news/core/presentation/themes/theme_notifier.dart';
+import 'package:blott_news/features/onboarding/presentation/controllers/user_onboarding_controller.dart';
+import 'package:blott_news/features/onboarding/presentation/widgets/header_section.dart';
 
 class UserOnboardingScreen extends ConsumerStatefulWidget {
   const UserOnboardingScreen({super.key});
@@ -54,7 +54,7 @@ class _UserOnboardingScreenState extends ConsumerState<UserOnboardingScreen> {
               TextField(
                 controller: _controller.firstNameController,
                 decoration: const InputDecoration(
-                  labelText: 'First name',
+                  hintText: 'First name',
                   border: UnderlineInputBorder(),
                 ),
               ),
@@ -62,7 +62,7 @@ class _UserOnboardingScreenState extends ConsumerState<UserOnboardingScreen> {
               TextField(
                 controller: _controller.lastNameController,
                 decoration: const InputDecoration(
-                  labelText: 'Last name',
+                  hintText: 'Last name',
                   border: UnderlineInputBorder(),
                 ),
               ),

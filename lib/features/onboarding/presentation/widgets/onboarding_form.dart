@@ -1,7 +1,7 @@
-import 'package:blott_news/core/themes/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:blott_news/core/presentation/themes/app_colors.dart';
 
 class OnboardingForm extends ConsumerStatefulWidget {
   const OnboardingForm({super.key});

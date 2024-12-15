@@ -1,12 +1,12 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:blott_news/core/presentation/widgets/button.dart';
-import 'package:blott_news/core/themes/app_colors.dart';
+import 'package:blott_news/core/presentation/themes/app_colors.dart';
 import 'package:blott_news/features/notifications/data/repositories/notification_repository_impl.dart';
 import 'package:blott_news/features/notifications/data/sources/firebase_notification_service.dart';
 import 'package:blott_news/features/notifications/domain/usecases/manage_notifications_usecase.dart';
 import 'package:blott_news/features/notifications/presentation/controllers/notification_controller.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_svg/svg.dart';
 
 class NotificationsScreen extends ConsumerStatefulWidget {
   const NotificationsScreen({super.key});
@@ -58,6 +58,7 @@ class _NotificationsScreenState extends ConsumerState<NotificationsScreen> {
                   style: TextStyle(
                     fontSize: 24.0,
                     fontWeight: FontWeight.bold,
+                    fontFamily: 'Roboto',
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -69,6 +70,7 @@ class _NotificationsScreenState extends ConsumerState<NotificationsScreen> {
                     style: TextStyle(
                       fontSize: 16.0,
                       color: Colors.grey,
+                      fontFamily: 'Roboto',
                     ),
                     textAlign: TextAlign.center,
                   ),

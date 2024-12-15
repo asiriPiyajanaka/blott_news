@@ -1,4 +1,4 @@
-import 'package:blott_news/core/themes/material_gen.dart';
+import 'package:blott_news/core/presentation/themes/material_gen.dart';
 import 'package:flutter/material.dart';
 
 class AppColors {

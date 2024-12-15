@@ -9,7 +9,6 @@ class SharedPreferencesManager {
   }
 
   SharedPreferencesManager._internal();
-
   SharedPreferences? _prefs;
 
   // Initialize SharedPreferences
@@ -19,21 +18,34 @@ class SharedPreferencesManager {
 
   // Save a string value
   Future<void> saveString(String key, String value) async {
-    await _prefs?.setString(key, value);
+    if (_prefs == null) {
+      return;
+    }
+    await _prefs!.setString(key, value);
   }
 
   // Get a string value
   String? getString(String key) {
-    return _prefs?.getString(key);
+    if (_prefs == null) {
+      return null;
+    }
+    final value = _prefs!.getString(key);
+    return value;
   }
 
   // Remove a key
   Future<void> remove(String key) async {
-    await _prefs?.remove(key);
+    if (_prefs == null) {
+      return;
+    }
+    await _prefs!.remove(key);
   }
 
   // Clear all preferences
   Future<void> clear() async {
-    await _prefs?.clear();
+    if (_prefs == null) {
+      return;
+    }
+    await _prefs!.clear();
   }
 }

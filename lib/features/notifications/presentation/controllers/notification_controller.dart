@@ -1,4 +1,4 @@
-import 'package:blott_news/core/themes/theme_notifier.dart';
+import 'package:blott_news/core/presentation/themes/theme_notifier.dart';
 import 'package:blott_news/features/notifications/domain/usecases/manage_notifications_usecase.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +32,7 @@ class NotificationController {
     // Set theme to dark before navigating
     ref.read(themeNotifierProvider.notifier).setDarkTheme();
     if (context.mounted) {
-      context.go('/dashboard-screen');
+      context.go('/news-dashboard-screen');
     }
   }
 
