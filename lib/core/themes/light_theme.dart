@@ -1,14 +1,16 @@
+import 'package:blott_news/core/themes/app_colors.dart';
 import 'package:flutter/material.dart';
 
 final lightTheme = ThemeData(
   brightness: Brightness.light,
-  primarySwatch: Colors.purple,
+  fontFamily: 'Roboto',
+  primarySwatch: AppColors.primarySwatch,
   scaffoldBackgroundColor: Colors.white,
   appBarTheme: const AppBarTheme(
-    color: Colors.purple,
+    color: AppColors.primary,
     iconTheme: IconThemeData(color: Colors.white),
   ),
   textTheme: const TextTheme(
-    bodyMedium: TextStyle(color: Colors.black),
+    bodyMedium: TextStyle(color: Colors.black, fontFamily: 'Roboto'),
   ),
 );

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 final darkTheme = ThemeData(
   brightness: Brightness.dark,
+  fontFamily: 'Roboto',
   primarySwatch: AppColors.primarySwatch,
   scaffoldBackgroundColor: Colors.black,
   appBarTheme: const AppBarTheme(
@@ -10,6 +11,6 @@ final darkTheme = ThemeData(
     iconTheme: IconThemeData(color: Colors.white),
   ),
   textTheme: const TextTheme(
-    bodyMedium: TextStyle(color: Colors.white),
+    bodyMedium: TextStyle(color: Colors.white, fontFamily: 'Roboto'),
   ),
 );
