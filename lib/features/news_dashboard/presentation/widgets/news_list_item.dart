@@ -75,7 +75,7 @@ class NewsListItem extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 4.0),
+                    const SizedBox(height: 10.0),
                     // Headline
                     Text(
                       news.headline,
@@ -83,6 +83,7 @@ class NewsListItem extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                         fontSize: 20.0,
+                        height: 1.0,
                         fontWeight: FontWeight.bold,
                         color: theme
                             .textTheme.bodyLarge?.color, // Dynamic text color
