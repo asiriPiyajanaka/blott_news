@@ -13,7 +13,7 @@ class NewsListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context); // Get the current theme
+    final theme = Theme.of(context);
 
     return GestureDetector(
       onTap: onTap,
@@ -21,11 +21,10 @@ class NewsListItem extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
         child: Container(
           decoration: BoxDecoration(
-            color: theme.cardColor, // Dynamically set background color
+            color: theme.cardColor,
             borderRadius: BorderRadius.circular(8.0),
             boxShadow: [
-              if (theme.brightness ==
-                  Brightness.light) // Shadow only in light mode
+              if (theme.brightness == Brightness.light)
                 BoxShadow(
                   color: Colors.grey.withOpacity(0.2),
                   spreadRadius: 2,
@@ -52,7 +51,6 @@ class NewsListItem extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Source and Date
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -61,16 +59,14 @@ class NewsListItem extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 12.0,
                             fontWeight: FontWeight.bold,
-                            color: theme.textTheme.bodySmall
-                                ?.color, // Dynamic text color
+                            color: theme.textTheme.bodySmall?.color,
                           ),
                         ),
                         Text(
                           news.date.toLocal().toString().split(' ')[0],
                           style: TextStyle(
                             fontSize: 12.0,
-                            color: theme.textTheme.bodySmall
-                                ?.color, // Dynamic text color
+                            color: theme.textTheme.bodySmall?.color,
                           ),
                         ),
                       ],
@@ -85,8 +81,7 @@ class NewsListItem extends StatelessWidget {
                         fontSize: 20.0,
                         height: 1.0,
                         fontWeight: FontWeight.bold,
-                        color: theme
-                            .textTheme.bodyLarge?.color, // Dynamic text color
+                        color: theme.textTheme.bodyLarge?.color,
                       ),
                     ),
                   ],
