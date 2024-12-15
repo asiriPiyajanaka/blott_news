@@ -30,7 +30,7 @@ class _UserOnboardingScreenState extends ConsumerState<UserOnboardingScreen> {
 
     _controller = UserOnboardingController(
       context: context,
-      onSubmitSuccess: () => context.go('/notification-screen'),
+      onSubmitSuccess: () => context.go('/notifications-screen'),
     );
   }
 

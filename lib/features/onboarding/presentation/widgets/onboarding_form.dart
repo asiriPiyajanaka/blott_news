@@ -43,7 +43,7 @@ class _OnboardingFormState extends ConsumerState<OnboardingForm> {
 
   void _onSubmit() {
     // Handle form submission logic
-    context.go('/notification-screen');
+    context.go('/notification-screens');
   }
 
   @override
